@@ -1,10 +1,19 @@
 ﻿
 $ErrorActionPreference = 'Stop';
-
-
+# Check system architecture
+if ([System.IntPtr]::Size -eq 4) { 
+	# 32-bit
+	$path = Join-Path "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" 'opc-core-componentsx86.msi'
+	echo "Installing as 32-bit"
+} else { 
+	# 64-bit
+	$path = Join-Path "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" 'opc-core-componentsx64.msi'
+	echo "Installing as 64-bit"
+}
 $name= 'OpcClassicCoreComponents'
-$url        = 'https://www.dropbox.com/s/wc3ttini4t0tm91/opc-core-componentsx86.msi?dl=1'
-$url64      = 'https://www.dropbox.com/s/v1ku7cpqh09qrnf/opc-core-componentsx64.msi?dl=1'
 $silent = '/quiet'
+
+echo $path
+
+Install-ChocolateyPackage $name 'msi' $silent $path
  
-Install-ChocolateyPackage $name 'msi' $silent $url $url64
