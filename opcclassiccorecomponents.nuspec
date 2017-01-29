@@ -2,11 +2,11 @@
 <!-- Do not remove this test for UTF-8: if "n�ppear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>opcclassiccorecomponents</id>
+    <id>opc-components</id>
     <title>OPC Classic Core Components</title>
     <version>106.0.201.2</version>
     <authors>OPC Foundation</authors>
-    <owners>OPC Foundation</owners>
+    <owners>jmbeach</owners>
     <summary>OPC Classic Core Components</summary>
     <description>OPC Classic Core Components installer</description>
     <projectUrl>https://opcfoundation.org/developer-tools/developer-kits-classic/core-components/</projectUrl>
